@@ -1,20 +1,47 @@
 /*========== Global Styles ==========*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     width: 100%;
     overflow-x: hidden; 
-    font-family: 'Poppins', sans-serif; 
-    scroll-behavior: smooth;
 }
 
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section, .courses_container, .desc_container, .home_img_container {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.courses_container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* shrink on mobile */
+}
+
+.navbar {
+    flex-wrap: wrap; 
+}
+
+div {
+    max-width: 100%;
+}
+
+
+h1, h2, h3, p, span {
+    word-wrap: break-word;
+}
 /*========== Navbar ==========*/
 .navbar{
     padding: 10px 50px;
@@ -443,5 +470,6 @@ section{
     .course_details h3{ font-size: 14px; }
     .course_price{ font-size: 14px; }
 }
+
 
 
