@@ -103,22 +103,60 @@ body{
     font-size: 18px;
 }
 
-/* Hamburger */
-.hamburger{
-    display: none;
+/* Hamburger menu */
+.hamburger {
+    display: none; /* hidden on desktop */
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
     cursor: pointer;
+    gap: 5px;
 }
 
-.hamburger span{
-    display: block;
-    height: 4px;
+.hamburger span {
+    width: 25px;
+    height: 3px;
     background: white;
     border-radius: 2px;
 }
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .menu_container {
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        right: 0;
+        width: 100%;
+        background: linear-gradient(to right,#850000,#7a0052);
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .menu_container.active {
+        display: flex; 
+    }
+
+    .menu_container ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu_container ul li {
+        margin: 10px 0;
+    }
+
+    .button_container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex; /
+    }
+}
+
 
 /*========== Homepage Description ==========*/
 section{
@@ -406,3 +444,4 @@ section{
     .course_details h3{ font-size: 14px; }
     .course_price{ font-size: 14px; }
 }
+
