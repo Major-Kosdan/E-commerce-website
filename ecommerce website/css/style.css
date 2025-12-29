@@ -1,3 +1,4 @@
+/*========== Global Styles ==========*/
 *{
     margin: 0;
     padding: 0;
@@ -10,11 +11,12 @@ html{
 
 body{
     font-size: 16px;
-    font-family: -apple-system, system-ui, BlinkmacsystemFont, "Segoe UI",Roboto,Helvetica system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",Roboto,Helvetica system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
     line-height: 1.5;
 }
 
+/*========== Navbar ==========*/
 .navbar{
     padding: 10px 50px;
     background: linear-gradient(to right,#850000,#7a0052);
@@ -24,14 +26,6 @@ body{
     top: 0;
     z-index: 100;
 }
-
-
-section{
-    padding: 50px;
-    /*border: 1px solid #e8e8e8;*/
-}
-
-/* Navigation section styles */
 
 .logo_container{
     width: 50px;
@@ -51,34 +45,35 @@ section{
 .menu_container{
     display: flex;
     flex: 1;
+    justify-content: space-between;
+    align-items: center;
 }
-
 
 .menu_container ul{
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    
 }
 
 .menu_container ul li{
-   list-style: none;
-    
+    list-style: none;
 }
 
 .menu_container ul li a{
     text-decoration: none;
     display: inline-block;
-     padding: 0 15px;
-     color: white;
- }
+    padding: 0 15px;
+    color: white;
+}
 
- .menu_container ul li a:hover{
+.menu_container ul li a:hover{
     color: #ed9805;  
- }
+}
 
 .button_container{
     padding-left: 15px;
+    display: flex;
+    gap: 10px;
 }
 
 .primary_btn{
@@ -96,20 +91,8 @@ section{
     padding: 7px 14px;
 }
 
-.course_details button{
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    padding: 7px 14px;
-}
-
-
 .primary_btn:hover, .secondary_btn:hover, .homepage_btn:hover{
     opacity: 0.8;
-}
-
-.homepage_btn:active{
-    border: 2px solid yellow;
 }
 
 .secondary_btn{
@@ -120,18 +103,35 @@ section{
     font-size: 18px;
 }
 
-.button_container .secondary_btn{
-    margin-right: 10px;
+/* Hamburger */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
 }
 
-/* homepage description section */
+.hamburger span{
+    display: block;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+}
 
-.desc_title_container, .email_sub_section{
+/*========== Homepage Description ==========*/
+section{
+    padding: 50px;
+}
+
+.desc_title_container{
     display: flex;
     background: linear-gradient(to right,#850000,#7a0052);
     border: none;
     align-items: center;
     position: relative;
+    gap: 20px;
 }
 
 .desc_container, .home_img_container{
@@ -140,7 +140,7 @@ section{
 
 .desc_container{
     padding-right: 40px;
- }
+}
 
 .desc_container h1{
     font-size: 50px;
@@ -158,13 +158,11 @@ section{
     background: #ed9805;
     border: 2px solid #ed9805;
     border-radius: 5px;
-    
 }
 
 .homepage_btn a{
     text-decoration: none;
     font-size: 18px;
-    letter-spacing: 2;
     font-weight: bold;
     color: white;
     display: block;
@@ -172,76 +170,42 @@ section{
     text-transform: uppercase;
 }
 
-/* for wavy background */
-
-.wave{
+/* Wavy background */
+.wave, .wave2{
     position: absolute;
     width: 100%;
     height: 38px;
+    background: url("../images/wave.png");
+}
+
+.wave{
     bottom: 0;
     left: 0;
-    background: url("../images/wave.png");
     animation: animate 10s linear infinite;
-    
 }
 
 .wave2{
-    position: absolute;
-    width: 100%;
-    height: 38px;
     top: 0;
     left: 0;
-    background: url("../images/wave.png");
     animation: animate 10s linear infinite;
     border-top: 2px solid white;
-    
 }
 
-.wave::before{
+.wave::before, .wave2::before{
     content: "";
     position: absolute;
     width: 100%;
     height: 38px;
-    bottom: 0;
-    left: 0;
     opacity: 0.4;
     background: url("../images/wave.png");
     animation: animate-reverse 10s linear infinite;
 }
 
-.wave2::before{
+.wave::after, .wave2::after{
     content: "";
     position: absolute;
     width: 100%;
     height: 38px;
-    top: 0;
-    left: 0;
-    opacity: 0.4;
-    background: url("../images/wave.png");
-    animation: animate-reverse 10s linear infinite;
-    
-}
-
-.wave::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 38px;
-    bottom: 0;
-    left: 0;
-    opacity: 0.6;
-    background: url("../images/wave.png");
-    animation-delay: -5s;
-    animation: animate 20s linear infinite;
-}
-
-.wave2::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 38px;
-    top: 0;
-    left: 0;
     opacity: 0.6;
     background: url("../images/wave.png");
     animation-delay: -5s;
@@ -249,28 +213,23 @@ section{
 }
 
 @keyframes animate {
-    0%{
-        background-position: 0;
-    }
-    100%{
-        background-position: 1811px;
-    }
+    0%{ background-position: 0; }
+    100%{ background-position: 1811px; }
 }
 
 @keyframes animate-reverse {
-    0%{
-        background-position: 1811px;
-    }
-    100%{
-        background-position: 0;
-    }
+    0%{ background-position: 1811px; }
+    100%{ background-position: 0; }
 }
 
-/* Courses section */
+/*========== Courses Section ==========*/
+.courses_container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+}
 
-.course_box
-{
-    /*width: 300px;*/
+.course_box{
     border-radius: 5px;
     background: white;
     box-shadow: 0 0 5px #cfcfcf;
@@ -309,7 +268,6 @@ section{
     text-decoration: line-through;
     display: inline-block;
     padding-left: 10px;
-    
 }
 
 .course_details h3{
@@ -318,33 +276,33 @@ section{
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-  
 }
 
-.courses_container{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+/*========== Email Subscription Section ==========*/
+.email_sub_section{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
 }
-
-/* Email Subscription section*/
 
 .email_sub_img{
-    width: 600;
-    height: 400px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 20px;
     overflow: hidden;
 }
 
 .email_sub_img img{
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
-/*Footer Section*/
 
+/*========== Footer Section ==========*/
 .footer_container{
     background: #f5f2f2;
+    padding: 50px 20px;
 }
 
 .footer_top{
@@ -375,24 +333,20 @@ section{
 
 .footer_bottom{
     background:  linear-gradient(to right,#850000,#7a0052);
-    padding: 50px 50px 20px 50px;
+    padding: 50px 20px 20px 20px;
     position: relative;
-}
-
-.social_container h3{
     text-align: center;
-    color: white;
 }
 
 .social_links{
-    margin: 10px 0;
     display: flex;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .social_links a{
   color: white;
-  margin: 0 10px;
   padding: 10px;
   border: 1px solid white;
   border-radius: 50%;
@@ -401,16 +355,6 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-}
-
-.social_links i{
-    color: white;
-    font-size: 20px;
-}
-
-.social_links i:hover{
-    color: #ed9805;
 }
 
 .copyright_text{
@@ -420,6 +364,45 @@ section{
     color: white;
     font-size: 14px;
     margin-top: 20px;
-    
+}
 
+/*========== Responsive Media Queries ==========*/
+@media (max-width: 1024px){
+    .desc_container h1{ font-size: 40px; }
+    .desc_container p{ font-size: 16px; }
+    .courses_container{ grid-template-columns: repeat(auto-fill, minmax(14em, 1fr)); }
+}
+
+@media (max-width: 768px){
+    .menu_container{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(to right,#850000,#7a0052);
+    }
+
+    .menu_container.active{ display: flex; }
+
+    .menu_container ul{
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .button_container{ flex-direction: column; align-items: center; }
+
+    .hamburger{ display: flex; margin-left: auto; }
+
+    .desc_title_container{ flex-direction: column; padding: 20px; }
+    .desc_container{ padding: 20px 0; }
+    .courses_container{ grid-template-columns: repeat(auto-fill, minmax(12em, 1fr)); }
+    .email_sub_section{ flex-direction: column; padding: 20px; }
+}
+
+@media (max-width: 480px){
+    .desc_container h1{ font-size: 28px; }
+    .desc_container p{ font-size: 14px; }
+    .homepage_btn a{ padding: 8px 16px; font-size: 14px; }
+    .course_details h3{ font-size: 14px; }
+    .course_price{ font-size: 14px; }
 }
