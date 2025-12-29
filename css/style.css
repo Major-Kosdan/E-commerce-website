@@ -348,6 +348,12 @@ section{
     -webkit-box-orient: vertical;
 }
 
+.course_details .primary_btn {
+    padding: 12px 25px; 
+    font-size: 16px;    
+    border-radius: 35px; 
+}
+
 /*========== Email Subscription Section ==========*/
 .email_sub_section{
     display: flex;
@@ -476,6 +482,7 @@ section{
     .course_details h3{ font-size: 14px; }
     .course_price{ font-size: 14px; }
 }
+
 
 
 
