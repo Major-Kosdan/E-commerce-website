@@ -11,7 +11,14 @@
    <div class="logo_container">
     <a href="index.html"><img src="images/IMG-20241103-WA0016.jpg"></a>
    </div>
-   <div class="menu_container">
+      <!-- Hamburger icon -->
+<div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+   <div class="menu_container" id="menu_container">
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#">About Us</a></li>
@@ -332,5 +339,16 @@
       <span class="copyright_text">Copyright &copy 2024 Kosdan Tech Hub. All rights reserved.</span>
       </div>
   </div>
+
+    <script>
+const hamburger = document.getElementById('hamburger');
+const menuContainer = document.getElementById('menu_container');
+
+hamburger.addEventListener('click', () => {
+    menuContainer.classList.toggle('active');
+});
+</script>
+    
 </body>
+
 </html>
