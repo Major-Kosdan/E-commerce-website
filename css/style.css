@@ -6,9 +6,11 @@
 }
 
 
-html, body {
-    width: 100%;
-    overflow-x: hidden;
+html {
+     width: 100%;
+    overflow-x: hidden  ;
+
+body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     line-height: 1.5;
@@ -474,6 +476,7 @@ section{
     .course_details h3{ font-size: 14px; }
     .course_price{ font-size: 14px; }
 }
+
 
 
 
